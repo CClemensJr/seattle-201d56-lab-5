@@ -30,8 +30,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  var product = a * b;
-  var multiplyString = `The product of ${ a } and ${ b } is ${ product }.`;
+  let product = a * b;
+  let multiplyString = `The product of ${ a } and ${ b } is ${ product }.`;
 
   return [product, multiplyString];
 }
@@ -54,7 +54,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  let addNums = sum(sum(a, b)[0], c)[0];
+  let multiplyNums = multiply(multiply(a, b)[0], c)[0];
 
+  let addNumsString = `${ a } and ${ b } and ${ c } sum to ${ addNums }.`;
+  let multiplyNumsString = `The product of ${ a } and ${ b } and ${ c } is ${ multiplyNums }.`
+
+  return [addNums, multiplyNums, addNumsString, multiplyNumsString];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
